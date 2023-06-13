@@ -41,11 +41,11 @@ function BacteriaInventory() {
 
   // sends email to these people about items to be restocked
   // look at line 76 for formatting email
-  MailApp.sendEmail({to: "ambhatnagar@montrose-env.com",
+  MailApp.sendEmail({to: EMAIL1,
                 subject: "Items to Restock",
                 htmlBody: printStuff(restock),
                 noReply:true});
-  MailApp.sendEmail({to: "joelle.carbonell@enthalpy.com",
+  MailApp.sendEmail({to: EMAIL2,
                   subject: "Items to Restock",
                   htmlBody: printStuff(restock),
                   noReply:true});
