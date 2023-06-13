@@ -15,7 +15,7 @@ function BacteriaInventory() {
 
   restock = [];
   
-  // adds only items that need to be restocked to restick object
+  // adds only items that need to be restocked to restock object
   for(var i = 0, l= bac_inv.length; i<l ; i++){
     if (bac_inv[i]['Quantity in Stock'] <= bac_inv[i]['Reorder Level'] || bac_inv[i]['Earliest EXP Date'] < plus_month || !bac_inv[i]['Earliest EXP Date']){
       item = bac_inv[i]['Name'];
@@ -23,18 +23,13 @@ function BacteriaInventory() {
       num_left = bac_inv[i]['Quantity in Stock'];
       exp = bac_inv[i]['Earliest EXP Date'];
 
+      // need this if to include inventory items that have an invalid date but need to be restocked
       if (!bac_inv[i]['Earliest EXP Date'] || bac_inv[i]['Earliest EXP Date'] == "NA"){
         restock.push(bac_inv[i]);
       }
 
       else{
-        if (bac_inv[i]['Earliest EXP Date'] < plus_month){
-          restock.push(bac_inv[i]);
-        }
-
-        else{
-          restock.push(bac_inv[i]);
-        }
+        restock.push(bac_inv[i]);
       }
     }
   }
@@ -82,7 +77,7 @@ function printStuff(restock){
 
     // just have to keep separating NA and blanks from everything else
     if (!exp || exp == "NA"){
-      temp = `<td> ${restock[i]['Name']} </td><td> ${restock[i]['Quantity in Stock']} </td>`;
+      temp = `<td> ${restock[i]['Name']} </td><td> ${restock[i]['Quantity in Stock']} </td><td> NA </td>`;
       string = string.concat(temp);
     }
     else{
