@@ -77,7 +77,7 @@ function printStuff(restock){
 
     // just have to keep separating NA and blanks from everything else
     if (!exp || exp == "NA"){
-      temp = `<td> ${restock[i]['Name']} </td><td> ${restock[i]['Quantity in Stock']} </td><td> NA </td>`;
+      temp = `<td> ${restock[i]['Name']} </td><td> ${restock[i]['Weight/Volume']}  </td><td> ${restock[i]['Quantity in Stock']} </td><td> NA </td>`;
       string = string.concat(temp);
     }
     else{
