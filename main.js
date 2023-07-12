@@ -81,7 +81,7 @@ function printStuff(restock){
       string = string.concat(temp);
     }
     else{
-      temp = `<td> ${restock[i]['Name']} </td><td> ${restock[i]['Quantity in Stock']}  </td><td> ${Utilities.formatDate(exp, 'America/New_York', 'MMMM dd, yyyy')}</td>`;
+      temp = `<td> ${restock[i]['Name']} </td><td> ${restock[i]['Weight/Volume']}  </td><td> ${restock[i]['Quantity in Stock']}  </td><td> ${Utilities.formatDate(exp, 'America/New_York', 'MMMM dd, yyyy')}</td>`;
       string = string.concat(temp);
     }
     string = string + "</tr>";
